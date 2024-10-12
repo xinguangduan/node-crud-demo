@@ -1,0 +1,20 @@
+{
+  "name": "crud-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xinguangduan/node-crud-demo.git"
+  },
+  "private": true,
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "express": "^4.21.1",
+    "mongoose": "^8.7.1",
+    "winston": "^3.15.0"
+  }
+}
