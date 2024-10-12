@@ -1,4 +1,4 @@
-const {getProductById, createProduct} = require('../service/productService');
+const {getProductById, createProduct, deleteProduct} = require('../service/productService');
 
 const getProduct = async (req, res) => {
     const productId = req.params.id;
@@ -20,7 +20,18 @@ const createNewProduct = async (req, res) => {
     }
 };
 
+const deleteOldProduct = async (req, res) => {
+    const productId = req.params.id;
+    const result = await deleteProduct(productId);
+    if (result) {
+        res.status(200).json(result);
+    } else {
+        res.status(500).json({error: 'Failed to delete product'});
+    }
+};
+
 module.exports = {
     getProduct,
     createNewProduct,
+    deleteOldProduct,
 };

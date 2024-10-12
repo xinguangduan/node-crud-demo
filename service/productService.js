@@ -21,7 +21,17 @@ const createProduct = async (productData) => {
     }
 }
 
+const deleteProduct = async (id) => {
+    try {
+        const result = await Product.findByIdAndDelete(id);
+        return result;
+    } catch (error) {
+        logger.error(`Error deleting product: ${error}`);
+    }
+}
+
 module.exports = {
     getProductById,
     createProduct,
+    deleteProduct,
 }
